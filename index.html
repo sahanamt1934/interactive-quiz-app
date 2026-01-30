@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="darkToggle">🌙</button>
+
+<!-- LOGIN -->
+<div id="loginPage" class="container">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input id="name" placeholder="Name" required>
+    <input id="email" type="email" placeholder="Email" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- HOME -->
+<div id="mainPage" class="container hidden">
+  <h2>Welcome, <span id="userName"></span></h2>
+  <p>Select a topic</p>
+  <div id="topicButtons"></div>
+</div>
+
+<!-- QUIZ -->
+<div id="quizPage" class="container hidden">
+  <h3 id="topicTitle"></h3>
+  <p>Score: <span id="score">0</span></p>
+  <p>⏱ <span id="time">10</span>s</p>
+  <div id="questionContainer"></div>
+  <button id="nextBtn" onclick="nextQuestion()" disabled>Next</button>
+</div>
+
+<!-- RESULT -->
+<div id="resultPage" class="container hidden">
+  <h2>🎉 Result</h2>
+  <p>Score: <span id="finalScore"></span></p>
+  <p>Percentage: <span id="percentage"></span>%</p>
+  <p>Grade: <span id="grade"></span></p>
+
+  <canvas id="scoreChart" width="300" height="200"></canvas>
+
+  <h3>🏆 Leaderboard</h3>
+  <ul id="leaderboard"></ul>
+
+  <button onclick="restartQuiz()">Restart</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

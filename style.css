@@ -1,0 +1,218 @@
+/* ===== GOOGLE FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ===== THEME VARIABLES ===== */
+:root {
+    --bg: linear-gradient(135deg, #667eea, #8a70a4);
+    --card: rgba(255, 255, 255, 0.2);
+    --text: #ffffff;
+    --btn: #00e676;
+    --btn-hover: #00c853;
+    --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+.dark {
+    --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --card: rgba(0, 0, 0, 0.4);
+    --text: #ffffff;
+    --btn: #64ffda;
+    --btn-hover: #1de9b6;
+}
+
+/* ===== BASE ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== CONTAINER (GLASS CARD) ===== */
+.container {
+    width: 92%;
+    max-width: 380px;
+    padding: 25px;
+    border-radius: 18px;
+    background: var(--card);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===== HEADINGS ===== */
+h2, h3 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ===== INPUTS ===== */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== BUTTONS ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--btn);
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+button:disabled {
+    opacity: 0.5;
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* ===== OPTIONS ===== */
+ul {
+    padding: 0;
+    margin-top: 15px;
+}
+
+li {
+    list-style: none;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+li:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 1);
+}
+
+li.correct {
+    background: linear-gradient(135deg, #00c853, #b2ff59);
+    color: #000;
+}
+
+li.wrong {
+    background: linear-gradient(135deg, #ff1744, #ff8a80);
+    color: #000;
+}
+
+/* ===== SCORE / TIMER ===== */
+#score, #time {
+    font-weight: 600;
+}
+
+/* ===== DARK MODE BUTTON ===== */
+#darkToggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    color: var(--text);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#darkToggle:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE POLISH ===== */
+@media (max-width: 400px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
+/* ===== LEADERBOARD ===== */
+#leaderboard {
+    margin-top: 10px;
+    padding: 0;
+}
+
+#leaderboard li {
+    background: rgba(255,255,255,0.9);
+    color: black;
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* ===== CHART CANVAS ===== */
+canvas {
+    margin-top: 15px;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    padding: 10px;
+}
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
